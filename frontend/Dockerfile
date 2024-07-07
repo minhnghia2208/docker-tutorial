@@ -8,8 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 80
-
-ENV MONGODB_CONTAINER=mongodb_chap_5
+EXPOSE 3000
 
 CMD ["npm", "start"]
