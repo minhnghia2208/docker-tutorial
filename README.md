@@ -23,7 +23,7 @@ docker run -it --rm -p 3000:3000 --name node_frontend_chap_5 -v "$(pwd)/frontend
 ```
 2. MongoDB: 
 ```console
-docker run --name mongodb_chap_5 -v mongo_chap_5:/data/db -d --rm -e --network chapter_5 mongo
+docker run --name mongodb -v mongo_chap_5:/data/db -d --rm -e --network chapter_5 mongo
 ```
 3. Back-end:
 ```console
@@ -31,4 +31,10 @@ docker build -t node_backend:latest ./backend
 ```
 ```console
  docker run --name node_backend_chap_5 -v backend_chap_5:/app/logs -v "$(pwd)/backend:/app" -v /app/node_modules --network chapter_5 --rm -d --env-file ./backend/.env -p 80:80 node_backend:latest
+```
+
+### or
+
+```console
+docker-compose up -d
 ```
